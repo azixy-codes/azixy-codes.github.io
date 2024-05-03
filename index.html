@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohamed Arezki CHEGRANI</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+
+    <style>
+      .page-enter-active,
+      .page-leave-active {
+        transition: all 0.2s;
+      }
+
+      .page-leave-to {
+        opacity: 0;
+        transform: translateY(-5px);
+      }
+
+      .page-enter-from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+    </style>
+  </head>
+  <body class="antialiased bg-gray-50 dark:bg-black min-h-screen">
+    <div class="fixed top-0 w-full z-50">
+      <!-- Barre de navigation -->
+      <nav class="mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
+        <ul
+          class="flex items-center my-4 px-3 text-sm font-medium text-gray-800 rounded-full shadow-lg bg-white/90 shadow-gray-800/5 ring-1 backdrop-blur dark:bg-gray-800/90 dark:text-gray-200 dark:ring-white/50 ring-gray-900/5"
+        >
+          <li>
+            <div class="relative inline-flex group">
+              <a
+                class="relative px-3 py-4 flex items-center justify-center transition hover:text-blue-500 dark:hover:text-blue-400 text-blue-600 dark:text-blue-400"
+                href="/"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  aria-hidden="true"
+                  role="img"
+                  class="icon w-5 h-5 z-10"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  data-v-bd832875=""
+                >
+                  <path
+                    fill="currentColor"
+                    d="M9.447 15.398a.75.75 0 1 0-.894 1.204A5.766 5.766 0 0 0 12 17.75a5.766 5.766 0 0 0 3.447-1.148a.75.75 0 1 0-.894-1.204A4.267 4.267 0 0 1 12 16.25a4.267 4.267 0 0 1-2.553-.852"
+                  ></path>
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M12 1.25c-.708 0-1.351.203-2.05.542c-.674.328-1.454.812-2.427 1.416L5.456 4.491c-.92.572-1.659 1.03-2.227 1.465c-.589.45-1.041.91-1.368 1.507c-.326.595-.472 1.229-.543 1.978c-.068.725-.068 1.613-.068 2.726v1.613c0 1.904 0 3.407.153 4.582c.156 1.205.486 2.178 1.23 2.947c.747.773 1.697 1.119 2.875 1.282c1.14.159 2.598.159 4.434.159h4.116c1.836 0 3.294 0 4.434-.159c1.177-.163 2.128-.509 2.876-1.282c.743-.769 1.073-1.742 1.23-2.947c.152-1.175.152-2.678.152-4.582v-1.613c0-1.113 0-2-.068-2.726c-.07-.75-.217-1.383-.543-1.978c-.327-.597-.78-1.056-1.368-1.507c-.568-.436-1.306-.893-2.227-1.465l-2.067-1.283c-.973-.604-1.753-1.088-2.428-1.416c-.697-.34-1.34-.542-2.049-.542M8.28 4.504c1.015-.63 1.73-1.072 2.327-1.363c.581-.283.993-.391 1.393-.391s.812.108 1.393.391c.598.29 1.312.733 2.327 1.363l2 1.241c.961.597 1.636 1.016 2.14 1.402c.489.375.77.684.963 1.036c.193.353.306.766.365 1.398c.061.648.062 1.465.062 2.623v1.521c0 1.97-.002 3.376-.14 4.443c-.136 1.048-.393 1.656-.82 2.099c-.425.439-1.003.7-2.004.839c-1.026.142-2.379.144-4.286.144h-4c-1.908 0-3.26-.002-4.286-.144c-1.001-.14-1.579-.4-2.003-.84c-.428-.442-.685-1.05-.82-2.098c-.14-1.067-.141-2.472-.141-4.443v-1.521c0-1.158 0-1.975.062-2.623c.059-.632.172-1.045.365-1.398c.193-.352.474-.661.964-1.036c.503-.386 1.178-.805 2.139-1.402z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span class="sr-only">Accueil</span></a
+              >
+              <div
+                class="z-20 group max-w-xs"
+                style="
+                  position: absolute;
+                  inset: 0px auto auto 0px;
+                  margin: 0px;
+                  transform: translate3d(-8.8px, 60px, 0px);
+                "
+                data-popper-placement="bottom"
+              >
+                <div class="">
+                  <div
+                    class="hidden group-hover:inline h-6 px-2 py-1 text-xs font-normal truncate relative bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded shadow ring-1 ring-gray-200 dark:ring-gray-800"
+                  >
+                    Accueil
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="relative inline-flex group">
+              <a
+                class="relative px-3 py-4 flex items-center justify-center transition hover:text-blue-500 dark:hover:text-blue-400"
+                href="/projects"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  aria-hidden="true"
+                  role="img"
+                  class="icon w-5 h-5 z-10"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  data-v-bd832875=""
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M6.86 1.25h.127c.351 0 .577 0 .798.02a4.75 4.75 0 0 1 2.474.98h6.299c.409 0 .687 0 .931.032a3.75 3.75 0 0 1 3.248 3.427a3 3 0 0 1 .77.503c.1.088.193.182.281.28c.529.588.754 1.303.86 2.144c.102.812.102 1.838.102 3.111v2.31c0 1.837 0 3.293-.153 4.432c-.158 1.172-.49 2.121-1.238 2.87c-.749.748-1.698 1.08-2.87 1.238c-1.14.153-2.595.153-4.433.153H9.944c-1.838 0-3.294 0-4.433-.153c-1.172-.158-2.121-.49-2.87-1.238c-.748-.749-1.08-1.698-1.238-2.87c-.153-1.14-.153-2.595-.153-4.433V6.86c0-.797 0-1.303.082-1.74A4.75 4.75 0 0 1 5.12 1.331c.438-.082.944-.082 1.74-.082m12.287 4.078a2.25 2.25 0 0 0-1.853-1.559c-.134-.017-.306-.019-.794-.019h-4.689c.643.64.935.906 1.266 1.09c.218.121.449.217.689.286c.413.117.866.124 2.062.124h.425c1.162 0 2.119 0 2.894.078M6.95 2.75c-.917 0-1.271.003-1.553.056a3.25 3.25 0 0 0-2.59 2.591c-.054.282-.057.636-.057 1.553V14c0 1.907.002 3.262.14 4.29c.135 1.005.389 1.585.812 2.008c.423.423 1.003.677 2.009.812c1.028.138 2.382.14 4.289.14h4c1.907 0 3.262-.002 4.29-.14c1.005-.135 1.585-.389 2.008-.812c.423-.423.677-1.003.812-2.009c.138-1.027.14-2.382.14-4.289v-2.202c0-1.336-.001-2.267-.09-2.975c-.087-.689-.246-1.06-.487-1.328a2.238 2.238 0 0 0-.168-.168c-.268-.241-.64-.4-1.328-.487c-.707-.089-1.639-.09-2.975-.09h-.484c-1.048 0-1.724 0-2.363-.182c-.35-.1-.689-.24-1.008-.417c-.58-.324-1.058-.801-1.8-1.543l-.077-.078l-.55-.55a8.03 8.03 0 0 0-.503-.482a3.25 3.25 0 0 0-1.771-.734a8.029 8.029 0 0 0-.696-.014m5.3 7.25a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span class="sr-only">Projets</span>
+              </a>
+              <div
+                class="z-20 group max-w-xs"
+                style="
+                  position: absolute;
+                  inset: 0px auto auto 0px;
+                  margin: 0px;
+                  transform: translate3d(-8.8px, 60px, 0px);
+                "
+                data-popper-placement="bottom"
+              >
+                <div class="">
+                  <div
+                    class="hidden group-hover:inline h-6 px-2 py-1 text-xs font-normal truncate relative bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded shadow ring-1 ring-gray-200 dark:ring-gray-800"
+                  >
+                    Projets
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="flex-1"></li>
+          <li>
+            <div class="relative inline-flex group">
+              <button
+                id="theme-toggle"
+                class="relative px-3 py-4 flex items-center justify-center transition hover:text-blue-500 dark:hover:text-blue-400"
+              >
+                <svg
+                  id="theme-toggle-dark-icon"
+                  data-v-bd832875=""
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  aria-hidden="true"
+                  role="img"
+                  class="hidden icon w-5 h-5"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M11.017 2.802a9.25 9.25 0 1 0 10.181 10.181A7.25 7.25 0 1 1 11.017 2.802M1.25 12C1.25 6.063 6.063 1.25 12 1.25c.717 0 1.075.571 1.137 1.026c.059.438-.103.995-.606 1.299a5.75 5.75 0 1 0 7.894 7.894c.304-.503.861-.665 1.299-.606c.455.062 1.026.42 1.026 1.137c0 5.937-4.813 10.75-10.75 10.75S1.25 17.937 1.25 12"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+
+                <svg
+                  id="theme-toggle-light-icon"
+                  data-v-bd832875=""
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  aria-hidden="true"
+                  role="img"
+                  class="hidden icon w-5 h-5"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M12 1.25a.75.75 0 0 1 .75.75v2a.75.75 0 0 1-1.5 0V2a.75.75 0 0 1 .75-.75M3.669 3.716a.75.75 0 0 1 1.06-.047L6.95 5.7a.75.75 0 1 1-1.012 1.107L3.716 4.776a.75.75 0 0 1-.047-1.06m16.662 0a.75.75 0 0 1-.047 1.06l-2.222 2.031A.75.75 0 0 1 17.05 5.7l2.222-2.031a.75.75 0 0 1 1.06.047M12 7.75a4.25 4.25 0 1 0 0 8.5a4.25 4.25 0 0 0 0-8.5M6.25 12a5.75 5.75 0 1 1 11.5 0a5.75 5.75 0 0 1-11.5 0m-5 0a.75.75 0 0 1 .75-.75h2a.75.75 0 0 1 0 1.5H2a.75.75 0 0 1-.75-.75m18 0a.75.75 0 0 1 .75-.75h2a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1-.75-.75m-2.224 5.025a.75.75 0 0 1 1.06 0l2.222 2.223a.75.75 0 0 1-1.06 1.06l-2.222-2.222a.75.75 0 0 1 0-1.06m-10.051 0a.75.75 0 0 1 0 1.061l-2.223 2.222a.75.75 0 0 1-1.06-1.06l2.222-2.223a.75.75 0 0 1 1.06 0M12 19.25a.75.75 0 0 1 .75.75v2a.75.75 0 0 1-1.5 0v-2a.75.75 0 0 1 .75-.75"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span class="sr-only">Changer de theme</span>
+              </button>
+              <div
+                class="z-20 group max-w-xs"
+                style="
+                  position: absolute;
+                  inset: 0px auto auto 0px;
+                  margin: 0px;
+                  transform: translate3d(-8.8px, 60px, 0px);
+                "
+                data-popper-placement="bottom"
+              >
+                <div class="">
+                  <div
+                    class="hidden group-hover:inline h-6 px-2 py-1 text-xs font-normal truncate relative bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded shadow ring-1 ring-gray-200 dark:ring-gray-800"
+                  >
+                    Changer de thème
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="h-32"></div>
+
+    <script>
+      var themeToggleDarkIcon = document.getElementById(
+        "theme-toggle-dark-icon"
+      );
+      var themeToggleLightIcon = document.getElementById(
+        "theme-toggle-light-icon"
+      );
+
+      // Change the icons inside the button based on previous settings
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        themeToggleLightIcon.classList.remove("hidden");
+      } else {
+        themeToggleDarkIcon.classList.remove("hidden");
+      }
+
+      var themeToggleBtn = document.getElementById("theme-toggle");
+
+      themeToggleBtn.addEventListener("click", function () {
+        // Toggle icons inside button
+        themeToggleDarkIcon.classList.toggle("hidden");
+        themeToggleLightIcon.classList.toggle("hidden");
+
+        // If set via local storage previously
+        if (localStorage.getItem("color-theme")) {
+          if (localStorage.getItem("color-theme") === "light") {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("color-theme", "dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("color-theme", "light");
+          }
+
+          // If NOT set via local storage previously
+        } else {
+          if (document.documentElement.classList.contains("dark")) {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("color-theme", "light");
+          } else {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("color-theme", "dark");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
